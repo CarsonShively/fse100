@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import time, threading, subprocess, math, numbers
 from concurrent.futures import ThreadPoolExecutor
 # sudo apt install -y python3-rpi.gpio
@@ -172,8 +170,6 @@ def say_overwrite(msg: str, bucket: Optional[Union["DistBucket", int]] = None):
         _slot_msg = str(msg)
         _slot_bucket = int(bucket) if bucket is not None else None
         _slot_evt.set()
-
-say = say_overwrite
 
 def speaker(stop_evt: threading.Event):
     last_seen_seq = -1
